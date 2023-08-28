@@ -27,6 +27,17 @@ const AddClass = async(req,res) =>{
     }
 } 
 
+const ClassCount = async(_, res) =>{
+    try{
+       const Classes = await Users.classall()
+
+       return res.status(200).json({count:Classes})
+    }catch(error){
+        return res.status(404).json({message:"Permission denied", error})
+    }
+}
+
 module.exports = {
-    AddClass
+    AddClass,
+    ClassCount
 }

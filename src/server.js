@@ -3,7 +3,7 @@ require("dotenv").config()
 const bodyparser = require('body-parser')
 const cors = require("cors")
 const fileupload = require('express-fileupload')
-const routes = require("./routes/route")
+const routes = require("./routes/route.js")
 
 
 

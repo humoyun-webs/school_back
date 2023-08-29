@@ -9,7 +9,9 @@ create table side(
   side_id uuid primary key  default uuid_generate_v4() null,
   title varchar(155) default  null,
   description text not null,
-  photo text not null
+  photo text not null,
+  created_at timestamp default current_timestamp,
+  updated_at timestamp default null
 );
 
 create table class(

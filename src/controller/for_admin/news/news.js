@@ -1,4 +1,4 @@
-const News = require("../../model/for_admin/news")
+const News = require("../../../model/for_admin/news")
 const Joi = require("joi")
 const {v4:uuid} = require("uuid");
 
@@ -41,12 +41,16 @@ const addNews= async (req, res) =>{
 }
 
 
-const EditNews = async ( req, res ) => {
+const   EditNews = async ( req, res ) => {
     try{
      const { title, descr} = req.body;
      const { image } = req.files;
      const { id } = req.params;
-   
+     
+
+     if(!id){
+        return res.status(403).json({message:"Not found"})
+     }
    
      const scheme = Joi.object({
         title:Joi.string().max(150).required(),
@@ -75,7 +79,7 @@ const EditNews = async ( req, res ) => {
 
 const getNews = async (req, res) =>{
     try{
-const Newss = await News.getNews()
+const Newss = await News.newsget()
 return res.status(200).json({message:Newss})
     }catch(error){
 return res.status(404).json({message:"Permission denied"})

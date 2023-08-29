@@ -1,14 +1,17 @@
+require("dotenv").config();
 const { Pool } = require("pg");
 
+const {
+  Datatabse_User,
+  Datatabse_Password,
+  Datatabse_Hostname,
+  Datatabse_Port,
+  Datatabse_Name,
+} = process.env;
+
 const pool = new Pool({
-  // connectionString:
-  //   "postgres://postgres:Reitmanz7@database-2.cqlfjodrkcqh.eu-west-2.rds.amazonaws.com:5432/crm",
-
-
-  connectionString:
-    "postgres://postgres:wsx@localhost:5432/school",
+  connectionString: `${Datatabse_User}://${Datatabse_User}:${Datatabse_Password}@${Datatabse_Hostname}:${Datatabse_Port}/${Datatabse_Name}`,
 });
-
 
 // mysql://user:password@hostname:port/database
 

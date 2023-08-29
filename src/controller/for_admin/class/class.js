@@ -1,5 +1,5 @@
 const Joi = require("joi")
-const Users = require("../../model/for_admin/class")
+const Users = require("../../../model/for_admin/class")
 const joi = require("joi")
 
 const AddClass = async(req,res) =>{

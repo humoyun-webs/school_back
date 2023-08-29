@@ -1,17 +1,14 @@
-const { verify } = require("../utils/jwt");
-
 const CheckRole = (role) => {
   return (req, res, next) => {
     const { user } = req;
-    // console.log(user);
 
     if (role === "superadmin") {
       if (user.role === "superadmin") return next();
+      else return res.status(403).json({ message: "Permission deniedd"});
+    } else if (role === "direktor") {
+      if (user.role === "direktor") return next();
       else return res.status(403).json({ message: "Permission denied"});
-    } else if (role === "teacher") {
-      if (user.role === "teacher" || user.role === role) return next();
-      else return res.status(403).json({ message: "Permission denied"});
-    }else if (role === "zauch"){
+    }else if (role === "teacher"){
      if (user.role === role) return next();
      else return res.status(403).json({ message: "Permission denied"});
     }else{

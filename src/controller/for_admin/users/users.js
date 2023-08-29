@@ -1,4 +1,4 @@
-const Users = require("../../model/for_admin/users")
+const Users = require("../../../model/for_admin/users")
 const Joi = require("joi")
 const {v4:uuid} = require("uuid");
 const bcrypt = require("bcrypt");

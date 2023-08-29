@@ -1,5 +1,5 @@
 const Joi = require("joi");
-const Pupil = require("../../model/for_users/pupils")
+const Pupil = require("../../../model/for_users/pupils")
 const jwt = require("jsonwebtoken")
 const {v4:uuid} = require("uuid");
 

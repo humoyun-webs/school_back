@@ -3,7 +3,7 @@ require("dotenv").config()
 const bodyparser = require('body-parser')
 const cors = require("cors")
 const fileupload = require('express-fileupload')
-const {routes} = require("./routes/route")
+const routes = require("./routes/route")
 
 
 
@@ -24,7 +24,16 @@ app.get("/*", (_, res) => {
 return res.status(404).send({message: "Not Found"})
 })
 
+
+
 const PORT = process.env.PORT || 5000;
+
+app.use = (err, req, res , next) =>{
+   if(err){
+      return res.status(404).send({message:"Not Found"})
+   }
+   next()
+}
 
 app.listen(PORT, () =>{
    console.log(`listening on ${PORT}`);

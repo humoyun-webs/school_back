@@ -12,7 +12,7 @@ const addNews= async (req, res) =>{
             title:Joi.string().max(150).required(),
             descr:Joi.string().required(),
             
-        })
+        });
     
         const {error} = scheme.validate({title, descr})
     

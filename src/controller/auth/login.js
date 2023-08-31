@@ -38,7 +38,7 @@ try{
     
    
     
-    res.status(200).json({message:"success", token})
+    return res.status(200).json({message:"success", token})
     
 }catch(error){
 return res.status(500).json({message:"Permission denied"})

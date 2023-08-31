@@ -6,7 +6,6 @@ const fileupload = require('express-fileupload')
 const routes = require("./routes/route.js")
 
 
-
 const app = express()
 app.use(cors({
    "access-control-allow-origin": "*"

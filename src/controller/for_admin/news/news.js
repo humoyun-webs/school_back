@@ -10,8 +10,7 @@ const addNews= async (req, res) =>{
         const {image} = req.files
         const scheme = Joi.object({
             title:Joi.string().max(150).required(),
-            descr:Joi.string().required(),
-            
+            descr:Joi.string().required(),            
         });
     
         const {error} = scheme.validate({title, descr})

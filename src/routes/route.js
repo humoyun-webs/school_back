@@ -4,6 +4,7 @@ const News = require("./news/news_route")
 const Pupil = require("./pupil/pupil_route")
 const Side = require("./side/side_route")
 const Users = require("./users/users_route")
+const Statistika = require("./statistik/statistik")
 
 
 module.exports = [
@@ -12,7 +13,8 @@ module.exports = [
     News,
     Pupil,
     Side,
-    Users
+    Users,
+    Statistika
 ]
 
 

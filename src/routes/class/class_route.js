@@ -6,7 +6,7 @@ const {isAuth} = require("../../middlewares/isAuth-middleware")
 const {AddClass,ClassCount} = require("../../controller/for_admin/class/class")
 
 routes
-.post('/add/class',CheckRole("zauch","superadmin"), AddClass)
+.post('/add/class',isAuth,CheckRole("superadmin"), AddClass)
 .get("/count/classes", ClassCount)
 
 

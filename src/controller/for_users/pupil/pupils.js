@@ -130,10 +130,26 @@ return res.status(404).json({message:"Permission denied"})
     
    }
 
+
+const GetBestuser = async (req, res) =>{
+      try{
+      const BestPupils = await Pupil.bestuserby()
+
+      if(!BestPupils){
+        return res.status(400).json({message:"Unday oquvchilar yoq !!"})
+      }
+
+      return res.status(200).json({message:BestPupils})
+      }catch(error){
+      return res.status(400).json({message:"Permission denied"})
+      }
+         }
+      
   module.exports = {
     addPupil,
     EditPupil,
     DeletePupil,
     Getpupils,
-    Getpupilbyid
+    Getpupilbyid,
+    GetBestuser
   }

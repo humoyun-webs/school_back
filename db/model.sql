@@ -73,15 +73,12 @@ updated_at timestamp default null,
 isDelete BOOLEAN NOT NULL DEFAULT FALSE
 );
 
-
--- //////////////////////
-
 CREATE TABLE course(
    id uuid primary key default uuid_generate_v4() null,
    title varchar(128) not null,
    descr text default null,
    photo text default null,
    created_at timestamp default current_timestamp,
-updated_at timestamp default null,
-isDelete BOOLEAN NOT NULL DEFAULT FALSE
-)
+   updated_at timestamp default null,
+   isDelete BOOLEAN NOT NULL DEFAULT FALSE
+);

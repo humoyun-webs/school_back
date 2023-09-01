@@ -22,7 +22,7 @@ const addSide= async (req, res) =>{
 
         const format = image.mimetype.split("/")[1];
     
-      const ImageLink = `${uuid()}` + `.${format}`;
+         const ImageLink = `${uuid()}` + `.${format}`;
 
       
       const path = `${process.cwd()}/src/upload/${ImageLink}`;

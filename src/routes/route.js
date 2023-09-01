@@ -5,6 +5,7 @@ const Pupil = require("./pupil/pupil_route")
 const Side = require("./side/side_route")
 const Users = require("./users/users_route")
 const Statistika = require("./statistik/statistik")
+const Course = require("./course/course_route")
 
 
 module.exports = [
@@ -14,7 +15,8 @@ module.exports = [
     Pupil,
     Side,
     Users,
-    Statistika
+    Statistika,
+    Course
 ]
 
 

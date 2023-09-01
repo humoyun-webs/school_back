@@ -7,7 +7,7 @@ const {addUser} = require("../../controller/for_admin/users/users")
 
 
 routes
-.post("/add/users",addUser)
+.post("/add/users",isAuth,CheckRole("superadmin"), addUser)
 
 
 module.exports = routes

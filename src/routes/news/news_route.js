@@ -7,11 +7,11 @@ const {addNews,EditNews,getNews,getNewsbyid, DeleteNews} = require("../../contro
 
 
 routes
-.post("/add/news",isAuth, CheckRole("direktor", "superadmin", "zauch") ,addNews)
-.put("/edit/news/:id",isAuth, CheckRole("direktor","superadmin","zauch"), EditNews)
+.post("/add/news",isAuth, CheckRole( "superadmin") ,addNews)
+.put("/edit/news/:id",isAuth, CheckRole("superadmin"), EditNews)
 .get("/get/news",getNews)
 .get("/get/news/:id", getNewsbyid)
-.delete("/delete/news/:id",isAuth,CheckRole("direktor","superadmin","zauch"), DeleteNews)
+.delete("/delete/news/:id",isAuth,CheckRole("superadmin"), DeleteNews)
 
 module.exports = 
     routes

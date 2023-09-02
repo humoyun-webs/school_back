@@ -13,5 +13,6 @@ routes
 .get("/get/news/:id", getNewsbyid)
 .delete("/delete/news/:id",isAuth,CheckRole("superadmin"), DeleteNews)
 
+
 module.exports = 
     routes

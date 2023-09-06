@@ -1,6 +1,5 @@
 const Joi = require("joi")
 const Users = require("../../../model/for_admin/class")
-const joi = require("joi")
 
 const AddClass = async(req,res) =>{
     try{
@@ -18,7 +17,6 @@ const AddClass = async(req,res) =>{
             return res.status(400).json({message:error.message})
         }
         
-    
         const newclass = await Users.addclass(num, lett, descr)
     
         return res.status(201).json({message:"Created", newclass})
@@ -66,7 +64,6 @@ const   Editclass = async ( req, res ) => {
      return res.status(201).json({ message: "edit success", newclass: classs });
     }catch(error){
    return res.status(404 ).json({message:"Permission denied"})
-//    console.log(error.message);
     }
    }
 

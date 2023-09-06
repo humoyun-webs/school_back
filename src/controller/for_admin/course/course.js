@@ -107,7 +107,6 @@ return res.status(404).json({message:"Permission denied"})
     }
 }
 
-
 module.exports = {
     addcourse,
     Editcourse,

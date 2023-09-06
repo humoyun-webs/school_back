@@ -1,9 +1,7 @@
 create extension if not exists "uuid-ossp";
 
-
 create type user_role as enum('teacher', 'direktor','superadmin','zauch','zamdirektor');
 create type class_num as enum ('1','2','3','4','5','6','7','8','9','10','11');
-
 
 create table side(
   side_id uuid primary key  default uuid_generate_v4() null,

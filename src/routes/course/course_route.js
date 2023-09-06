@@ -5,7 +5,6 @@ const {isAuth} = require("../../middlewares/isAuth-middleware")
 
 const {addcourse,Editcourse,getcourse,getcoursebyid, Deletecourse} = require("../../controller/for_admin/course/course")
 
-
 routes
 .post("/add/course",isAuth, CheckRole("superadmin") ,addcourse)
 .put("/edit/course/:id",isAuth, CheckRole("superadmin"), Editcourse)

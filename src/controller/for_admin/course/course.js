@@ -31,10 +31,8 @@ const addcourse= async (req, res) =>{
     
         return res.status(201).json({message:"Created", newcourse})
         
-        
     }catch(error){
         return res.status(404).json({message:"Permission denied", error})
-        // console.log(error.message);
     }
 }
 
@@ -71,11 +69,10 @@ const   Editcourse = async ( req, res ) => {
      return res.status(201).json({ message: "edit success", newcourse: courses });
     }catch(error){
    return res.status(404 ).json({message:"Permission denied"})
-//    console.log(error.message);
     }
    }
 
-const getcourse = async (req, res) =>{
+const getcourse = async (_, res) =>{
     try{
 const courses = await course.courseget()
 return res.status(200).json({message:courses})

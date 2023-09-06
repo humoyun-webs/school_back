@@ -11,7 +11,6 @@ const Statistika = async (req, res) => {
     }catch(err){
     return res.status(404).json({message:"Permission denied",err})
     }
-    
 }
 
 

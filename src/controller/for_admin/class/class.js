@@ -17,6 +17,7 @@ const AddClass = async(req,res) =>{
         if(error){
             return res.status(400).json({message:error.message})
         }
+        
     
         const newclass = await Users.addclass(num, lett, descr)
     

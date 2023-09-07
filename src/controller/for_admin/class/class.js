@@ -49,7 +49,6 @@ const   Editclass = async ( req, res ) => {
         num:Joi.number().min(1).max(11).required(),
             lett:Joi.string().max(1).required(),
             descr:Joi.string().required()
-        
      });
    
      const { error } = scheme.validate({ num, lett, descr});

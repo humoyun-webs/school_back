@@ -87,7 +87,6 @@ return res.status(404).json({message:"Permission denied"})
 
 const Deleteside = async (req, res) =>{
     try{
-
         const {id} = req.params
 const sides = await Side.sidedelete(id)
 return res.status(200).json({message:"Success deleted"})

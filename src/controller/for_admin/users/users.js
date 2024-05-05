@@ -4,7 +4,7 @@ const {v4:uuid} = require("uuid");
 const bcrypt = require("bcrypt");
 
 
-
+ 
 const addUser = async (req, res) => {
     try{
       const { name, l_name, age, email, password, role, subject, num, lett} = req.body;
@@ -47,6 +47,7 @@ const addUser = async (req, res) => {
       const hashpassword = await bcrypt.hash(password, 12);
       // console.log(hashpassword);
       const newUser = await Users.adduser(name, l_name, age, email, hashpassword, role, subject, num, lett,ImageLink,class_id.class_id);
+  
       image.mv(path);
       return res.status(200).json({ message: "success", newUser });
     }catch(error){
